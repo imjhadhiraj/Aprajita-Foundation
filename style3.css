@@ -1,0 +1,38 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.logo img{
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    /*border: 2px solid red ;*/
+    position: relative;
+    left:0;
+    top:0;
+}
+.logo{
+    height: 24vh;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    background-color:#C5261B ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container{    
+    background-color: #F6E513;
+    height: 75vh;
+    text-align: center;
+
+}
+p{
+    text-decoration: solid;
+    font-weight: bold;
+    font-size: large;
+}
