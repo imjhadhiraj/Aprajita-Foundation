@@ -1,125 +1,153 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joining NGO</title>
-<style>
 
-    *{
-        margin: 0;
-        padding: 0;
-    }
-    
-    .logo img{
-        height: 130px;
-        width: 130px;
-        border-radius: 50%;
-        /*border: 2px solid red ;*/
-        position: relative;
-        left:0;
-        top:0;
-    }
-    .logo{
-        height: 24vh;
-        font-size: 40px;
-        color: white;
-        font-weight: bold;
-        background-color:#C5261B ;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-    }
-    
-    .container{    
-        background-color: #F6E513;
-        height: 75vh;
-        text-align: center;
-    
-    }
-    p{
-        text-decoration: solid;
-        font-weight: bold;
-        font-size: large;
-    }
-form {
-max-width: 400px;
-margin: auto;
-padding: 20px;
-border: 1px solid #black;
-border-radius: 8px;
-}
-input {
-width: 100%;
-padding: 8px;
-margin: 8px 0;
-border: 1px solid #black;
-border-radius: 4px;
-}
-/* Styling for error messages */
-.error {
-color: red;
-font-size: 0.9em;
-}
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joining NGO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo img {
+            height: 130px;
+            width: 130px;
+            border-radius: 50%;
+            /*border: 2px solid red ;*/
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        .logo {
+            height: 24vh;
+            font-size: 40px;
+            color: white;
+            font-weight: bold;
+            background-color: #C5261B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .container {
+            background-color: #F6E513;
+            height: 75vh;
+            text-align: center;
+        }
+
+        p {
+            text-decoration: solid;
+            font-weight: bold;
+            font-size: large;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 3px solid black;
+            border-radius: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+
+        #btn-submit {
+            background-color: #C80036;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 50%;
+            font-size: large;
+        }
+
+        #btn-submit:hover {
+            background-color: #C5261B;
+        }
+
+        /* Styling for error messages */
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
+
 <body>
     <div class="logo"><img src="logo.jpg"> &nbsp &nbsp <span>Aprajita Foundation</span></div>
-<div class="container"><bR><br><h2>Kindly Fill all the Details !!!</h2><br>
-<form id="myForm">
-<label for="name">Name:</label>
-<input type="text" id="name" name="name" required>
-<div id="nameError" class="error"></div>
-<label for="email">Email:</label>
-<input type="email" id="email" name="email" required>
-<div id="emailError" class="error"></div>
-<label for="password">Password:</label>
-<input type="password" id="password" name="password" required>
-<div id="passwordError" class="error"></div>
-<button type="submit">Submit</button>
-</form></div>
-<script>
-const form = document.getElementById('myForm');
-// Function to validate the form
-function validateForm(event) {
-// Prevent form submission
-event.preventDefault();
-// Clear previous error messages
-document.getElementById('nameError').textContent = '';
-document.getElementById('emailError').textContent = '';
-document.getElementById('passwordError').textContent = '';
-// Get input values
-const name = document.getElementById('name').value;
-const email = document.getElementById('email').value;
-const password = document.getElementById('password').value;
-let valid = true;
-// Validate name
-if (name.trim() === '') {
-document.getElementById('nameError').textContent = 'Name is required.';
-valid = false;
-}
-// Validate email
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-if (!emailPattern.test(email)) {
-document.getElementById('emailError').textContent = 'Invalid email format.';
-valid = false;
-}
-// Validate password
-if (password.length < 6) {
-document.getElementById('passwordError').textContent = 'Password must be at
-least 6 characters long.';
-valid = false;
-}
-// If valid, submit the form
-if (valid) {
-form.submit();
-}
-}
-// Attach event listener to the form's submit event
-form.addEventListener('submit', validateForm);
-</script>
+    <div class="container"><bR><br>
+        <h2>Kindly Fill all the Details !!!</h2><br>
+        <form id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <div id="nameError" class="error"></div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <div id="emailError" class="error"></div>
+            <label for="phone">Phone Number:</label>
+            <input type="number" id="phone" name="phone" required>
+            <div id="passwordError" class="error"></div>
+            <button id="btn-submit" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('myForm');
+        // Function to validate the form
+        function validateForm(event) {
+            // Prevent form submission
+            event.preventDefault();
+            // Clear previous error messages
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            // Get input values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const mobile = document.getElementById('mobile').value;
+            let valid = true;
+            // Validate name
+            if (name.trim() === '') {
+                document.getElementById('nameError').textContent = 'Name is required.';
+                valid = false;
+            }
+            // Validate email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = 'Invalid email format.';
+                valid = false;
+            }
+            // Validate mobile number
+            if (mobile.length < 10) {
+                document.getElementById('passwordError').textContent = 'Mobile number must be atleast 10 characters long.';
+                valid = false;
+            }
+            // If valid, submit the form
+            if (valid) {
+                form.submit();
+            }
+        }
+        // Attach event listener to the form's submit event
+        form.addEventListener('submit', validateForm);
+    </script>
+
 </body>
+
 </html>
